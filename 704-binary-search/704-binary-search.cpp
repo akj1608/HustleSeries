@@ -19,10 +19,12 @@ public:
           else if(target>=nums[mid] && target<=nums[high]){
                 low=mid+1;
             }
-            else{
+            else
+            {
                 return -1;
             }
         }
         return -1;
-    }
+    }   
+    
 };
