@@ -2,7 +2,7 @@
 
 <p><em>Find the </em><font face="monospace"><code>k<sup>th</sup></code></font><em>&nbsp;positive integer that is missing from this array.</em></p>
 
-<p>&nbsp;</p>
+
 <p><strong>Example 1:</strong></p>
 
 <pre><strong>Input:</strong> arr = [2,3,4,7,11], k = 5
