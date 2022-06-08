@@ -3,17 +3,24 @@ public:
     int removePalindromeSub(string s) {
         
         int n=s.size();
-      int  count=0;
+      int low=0;
+        int high=n-1;
         
         
-        for( int i=0;i<n;i++)
+        while(low<high)
         {
-            if(s[i]!=s[n-i-1])
-            {
-                return 2;
-            }
+            if(s[low]!=s[high]) return 2;
+            
+            low++;
+            high--;
+            
         }
+        
+        
         return 1;
+        
+        
+     
         
     }
 };
