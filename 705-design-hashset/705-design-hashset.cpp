@@ -8,7 +8,7 @@ public:
     
     MyHashSet()
     {
-        size=120;
+        size=20;
         v.resize(size);
         
     }
