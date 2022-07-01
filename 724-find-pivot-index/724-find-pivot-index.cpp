@@ -8,8 +8,8 @@ public:
         if(n==0)
             return -1;
         
-        int left[n];
-        int right[n];
+        vector<int>left(n);
+          vector<int>right(n);
         
          left[0]=nums[0];
         right[n-1]=nums[n-1];
