@@ -10,12 +10,12 @@ public:
                 
             }
         
-      for(int i = idx;i<n;i++) {
-            if(i>idx && arr[i]==arr[i-1]) continue; 
-            if(arr[i]>target) break; 
-            ds.push_back(arr[i]);
-            generate(i+1,target-arr[i],arr,ds,ans); 
-            ds.pop_back(); 
+        for(int i=idx;i<n;i++){
+            if(i>idx && arr[i]==arr[i-1]) continue;
+              if(arr[i]>target) break;
+             ds.push_back(arr[i]);
+            generate(i+1,target-arr[i],arr,ds,ans);
+            ds.pop_back();
         }
         
       
