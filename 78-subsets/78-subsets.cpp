@@ -1,24 +1,29 @@
 class Solution {
 public:
-    void generate(vector<int>& nums,int idx,  vector<int>& subset,vector<vector<int>>& ans)
-    {   int n=nums.size();
+    void generate(vector<int>& nums,int idx,  vector<int>subset,vector<vector<int>>& ans)
+    {   
         
        
         
-        if(idx==n)
+        if(idx>=nums.size())
         {
             ans.push_back(subset);
             return;
                 
         }
+     //excluding the element
+     
+      generate(nums,idx+1,subset,ans);
+        
        //including the ith element
-     subset.push_back(nums[idx]);
+     int element=nums[idx];
+     subset.push_back(element);
+      
      generate(nums,idx+1,subset,ans);
          
          //not taking ith element
-         subset.pop_back();
-      generate(nums,idx+1,subset,ans);
-        
+       
+     
     }
     
     
@@ -26,10 +31,12 @@ public:
     
     
     vector<vector<int>> subsets(vector<int>& nums) {
-        vector<int>subset;
+       
        vector<vector<int>>ans;
+       vector<int>subset;
+      int idx=0;
         
-        generate(nums,0,subset,ans);
+        generate(nums,idx,subset,ans);
         return ans;
         
         
