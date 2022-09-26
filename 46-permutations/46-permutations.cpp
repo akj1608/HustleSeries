@@ -1,28 +1,32 @@
+#include <bits/stdc++.h>
 class Solution {
 public:
-    void gen(int i,vector<int>& nums,vector<vector<int>>& res)
-    {
-      if(i==nums.size())
-      {
-        res.push_back(nums);
-        return;
-      }
-      
-      for(int a=i;a<nums.size();a++)
-      {
-        swap(nums[i],nums[a]);
-        gen(i+1,nums,res);
-         swap(nums[i],nums[a]);
-      }
-      
-    }
-             
+  void solve(vector<int>&nums,int idx,vector<vector<int>>&ans)
+  {
+    if(idx>=nums.size()){
+      ans.push_back(nums);
+      return ;
+  }
     
-    vector<vector<int>> permute(vector<int>& nums) {
+    for(int j=idx;j<nums.size();j++)
+    {
+      swap(nums[idx],nums[j]);
+      solve(nums,idx+1,ans);
       
-        vector<vector<int>> res;
-      gen(0,nums,res);
-        
-      return res;
+      // backtrack
+       swap(nums[idx],nums[j]);
+    }
+      
+  }
+  
+  
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<vector<int>> ans;
+      
+      int idx=0;
+      
+      solve(nums,idx,ans);
+      return ans;
+      
     }
 };
