@@ -15,28 +15,27 @@ class Solution
     int peakElement(int arr[], int n)
     {
        // Your code here
-       int low =0,mid;
-       int high=n-1;
+       int start =0;
+       int end=n-1;
        
-       while(low<=high)
+       while(start<=end)
        {
-           mid=low+(high-low)/2;        
+           int mid=start+(end-start)/2;
            
-           if((mid==0|| arr[mid-1]<=arr[mid]) && (mid==n-1||arr[mid+1]<=arr[mid]))
+           if((mid==0 ||arr[mid-1]<=arr[mid]) &&(mid==n-1|| arr[mid+1]<=arr[mid]))
            {
                return mid;
            }
-           
-            if(arr[mid-1]>=arr[mid])
+           else if(arr[mid+1]>=arr[mid])
            {
-               high=mid-1;
+               start=mid+1;
            }
            else
            {
-               low=mid+1;
+               end=mid-1;
            }
        }
-       
+       return -1;
     }
 };
 
