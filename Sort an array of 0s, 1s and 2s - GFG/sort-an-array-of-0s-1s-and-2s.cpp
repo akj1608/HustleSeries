@@ -8,34 +8,40 @@ using namespace std;
 class Solution
 {
     public:
-    void sort012(int arr[], int n)
+    void sort012(int a[], int n)
     {
         // code here 
-     int low =0,mid =0,high=n-1;
-     
-     
-     while(mid<=high)
-    {
-        if(arr[mid]==0)
-        {
-            swap(arr[low],arr[mid]);
-            low++;
-            mid++;
-        }
-        else if(arr[mid]==1)
-        {
-            
-            mid=mid+1;;
-        }
-        else
-        {
-            swap(arr[mid],arr[high]);
-            high=high-1;
-            
-        }
-    }     
+        int zero=0,ones=0,twos=0;
         
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]==0)
+            {
+                zero++;
+            }
+            else if(a[i]==1)
+            {
+                ones++;
+                
+            }
+            else
+            {
+                twos++;
+            }
+        }
         
+        for(int i=0;i<zero;i++)
+        {
+            a[i]=0;
+        }
+        for(int i=zero;i<ones+zero;i++)
+        {
+            a[i]=1;
+        }
+        for(int i=ones+zero;i<n;i++)
+        {
+            a[i]=2;
+        }
     }
     
 };
